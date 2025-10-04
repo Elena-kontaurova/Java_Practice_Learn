@@ -1,22 +1,18 @@
 package theory.tasksClassFive;
 
 public class Dog {
-    private String name;
-    private int age;
-    public Dog(String name, int age) {
+    public String name;
+    public Integer height;
+    public String color;
+    public Dog(String name, Integer height, String color) {
         this.name = name;
-        this.age = age;
+        this.height = height;
+        this.color = color;
     }
-    public String getName() {
-        return name;
+    public static Dog init1(String name) {
+        return new Dog(name, null, null);
     }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
-        this.age = age;
-    }
-    public void setName(String name) {
-        this.name = name;
+    public static Dog init2(String name, Integer height) {
+        return new Dog(name, height, null);
     }
 }

@@ -1,4 +1,6 @@
-public class Main {
+package theory;
+
+public class JavaRushOne {
     public static void main(String[] args) {
 
     }

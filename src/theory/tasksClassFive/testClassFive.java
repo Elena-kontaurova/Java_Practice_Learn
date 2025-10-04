@@ -8,8 +8,5 @@ public class testClassFive {
         boolean a = Cat.fight(cat1, cat2);
         boolean b = Cat.fight(cat2, cat3);
         boolean c = Cat.fight(cat3, cat1);
-        System.out.println(a);
-        System.out.println(b);
-        System.out.println(c);
     }
 }
