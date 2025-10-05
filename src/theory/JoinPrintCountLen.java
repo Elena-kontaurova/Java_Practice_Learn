@@ -1,6 +1,6 @@
 package theory;
 
-public class JavaRushOne {
+public class JoinPrintCountLen {
     public static void main(String[] args) {
 
     }
