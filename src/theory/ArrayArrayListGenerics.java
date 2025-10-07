@@ -7,24 +7,26 @@ import java.util.ArrayList;
 
 public class ArrayArrayListGenerics {
     public static void main(String[] args) throws IOException {
-        delOneAddEnd();
+        exactlWords();
     }
+
     public static int initializeArray() throws IOException {
-        int [] arr = new int[20];
+        int[] arr = new int[20];
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
         int a = 0;
-        for (int j: arr) {
+        for (int j : arr) {
             if (j > a) {
                 a = j;
             }
         }
         return a;
     }
+
     public static void reverseArray() throws IOException {
-        String [] arr = new String[10];
+        String[] arr = new String[10];
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < 8; i++) {
             arr[i] = br.readLine();
@@ -33,21 +35,23 @@ public class ArrayArrayListGenerics {
             System.out.println(arr[i]);
         }
     }
+
     public static void twoArrays() throws IOException {
-        String [] arr = new String[10];
-        int [] arr1 = new int[10];
+        String[] arr = new String[10];
+        int[] arr1 = new int[10];
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < arr.length; i++) {
             String s = br.readLine();
             arr[i] = s;
             arr1[i] = s.length();
         }
-        for (int j: arr1) {
+        for (int j : arr1) {
             System.out.println(j);
         }
     }
+
     public static void reverseArrayInt() throws IOException {
-        int [] arr = new int[10];
+        int[] arr = new int[10];
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(br.readLine());
@@ -56,23 +60,25 @@ public class ArrayArrayListGenerics {
             System.out.println(arr[i]);
         }
     }
+
     public static void oneBigTwoSmallArrays() throws IOException {
-        int [] arr = new int[20];
+        int[] arr = new int[20];
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
-        int [] arr1 = new int[10];
-        int [] arr2 = new int[10];
+        int[] arr1 = new int[10];
+        int[] arr2 = new int[10];
 
         System.arraycopy(arr, 0, arr1, 0, 10);
 
         System.arraycopy(arr, 10, arr2, 0, 10);
 
-        for (int j: arr2) {
+        for (int j : arr2) {
             System.out.println(j);
         }
     }
+
     public static void listOne() {
         ArrayList<String> list = new ArrayList<>();
         list.add("A");
@@ -81,10 +87,11 @@ public class ArrayArrayListGenerics {
         list.add("D");
         list.add("E");
         System.out.println(list.size());
-        for (String j: list) {
+        for (String j : list) {
             System.out.println(j);
         }
     }
+
     public static void maxStrList() throws IOException {
         ArrayList<String> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -93,13 +100,14 @@ public class ArrayArrayListGenerics {
             list.add(s);
         }
         String minStr = "";
-        for (String j: list) {
+        for (String j : list) {
             if (j.length() > minStr.length()) {
                 minStr = j;
             }
         }
         System.out.println(minStr);
     }
+
     public static void minStrList() throws IOException {
         ArrayList<String> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -115,6 +123,7 @@ public class ArrayArrayListGenerics {
         }
         System.out.println(minStr);
     }
+
     public static void listContrary() throws IOException {
         ArrayList<String> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -126,6 +135,7 @@ public class ArrayArrayListGenerics {
             System.out.println(list.get(i));
         }
     }
+
     public static void delOneAddEnd() throws IOException {
         ArrayList<String> list = new ArrayList<>();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -138,7 +148,66 @@ public class ArrayArrayListGenerics {
             list.removeLast();
             list.addFirst(s);
         }
-        for (String j: list) {
+        for (String j : list) {
+            System.out.println(j);
+        }
+    }
+
+    public static void threeArrays() throws IOException {
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        ArrayList<Integer> list3 = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 20; i++) {
+            int s = Integer.parseInt(br.readLine());
+            if (s % 3 == 0 && s % 2 == 0) {
+                list1.add(s);
+                list2.add(s);
+            } else if (s % 3 == 0) {
+                list1.add(s);
+            } else if (s % 2 == 0) {
+                list2.add(s);
+            } else {
+                list3.add(s);
+            }
+        }
+        System.out.println();
+        for (int j : list1) {
+            System.out.print(j);
+        }
+        System.out.println();
+        for (int j : list2) {
+            System.out.print(j);
+        }
+        System.out.println();
+        for (int j : list3) {
+            System.out.print(j);
+        }
+    }
+
+    public static void wordBack() throws IOException {
+        ArrayList<String> list = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 5; i++) {
+            list.add(br.readLine());
+        }
+        list.remove(2);
+        for (int i = 3; i >= 0; i--) {
+            System.out.println(list.get(i));
+        }
+    }
+
+    public static void exactlWords() {
+        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+        list.add("мама");
+        list.add("мыла");
+        list.add("раму");
+        for (int i = 0; i < list.size(); i++) {
+            list2.add(list.get(i));
+            list2.add("именно");
+        }
+        for (String j : list2) {
             System.out.println(j);
         }
     }
