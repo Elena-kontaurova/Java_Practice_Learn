@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class ArrayArrayListGenerics {
     public static void main(String[] args) throws IOException {
-        exactlWords();
+        rearrangement();
     }
 
     public static int initializeArray() throws IOException {
@@ -208,6 +208,58 @@ public class ArrayArrayListGenerics {
             list2.add("именно");
         }
         for (String j : list2) {
+            System.out.println(j);
+        }
+    }
+    public static void letterRL() {
+        ArrayList<String> list = new ArrayList<>();
+        list.add("роза");
+        list.add("лира");
+        list.add("лоза");
+        for (int i = 0; i < list.size(); i++) {
+            if ((list.get(i).contains("р")) && (list.get(i).contains("л"))) {
+                return;
+            }
+            else if (list.get(i).contains("р")) {
+                list.remove(list.get(i));
+            }
+            else if (list.get(i).contains("л")) {
+                String s = list.get(i) + "\n" + list.get(i);
+                list.set(i, s);
+            }
+        }
+        for (String j : list) {
+            System.out.println(j);
+        }
+    }
+    public static void doubleValuev() throws IOException {
+        ArrayList<String> list = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        for (int i = 0; i < 10; i++) {
+            list.add(br.readLine());
+        }
+        for (int i = 0; i < 10; i++) {
+            String s = list.get(i) + "\n" + list.get(i);
+            list.set(i, s);
+        }
+        for (String j : list) {
+            System.out.println(j);
+        }
+    }
+    public static void rearrangement() throws IOException {
+        ArrayList<String> list = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        int m = Integer.parseInt(br.readLine());
+        for (int i = 0; i < n; i++) {
+            list.add(br.readLine());
+        }
+        for (int i = 0; i < m; i++) {
+            String a = list.getFirst();
+            list.remove(list.getFirst());
+            list.addLast(a);
+        }
+        for (String j : list) {
             System.out.println(j);
         }
     }
