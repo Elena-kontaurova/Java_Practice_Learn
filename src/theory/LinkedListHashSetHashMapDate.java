@@ -4,7 +4,7 @@ import java.util.*;
 
 public class LinkedListHashSetHashMapDate {
     public static void main(String[] args) {
-        hashMap();
+        setL();
     }
     public static void hastSet() {
         HashSet<String> set = new HashSet<>();
@@ -39,6 +39,60 @@ public class LinkedListHashSetHashMapDate {
             String key = pair.getKey();
             String value = pair.getValue();
             System.out.println(key + " - " + value);
+        }
+    }
+    public static void efficiency() {
+        long start = System.currentTimeMillis();
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < 100000; i ++) {
+            list.add("a");
+            list.add(1, "s");
+            String a = list.getFirst();
+            list.set(0, "b");
+            list.removeFirst();
+        }
+        long end = System.currentTimeMillis();
+        long result = (end - start);
+        System.out.println(result);
+    }
+    public static void efficiency1() {
+        long start = System.currentTimeMillis();
+        LinkedList<String> list1 = new LinkedList<>();
+        for (int i = 0; i < 100000; i ++) {
+            list1.add("a");
+            list1.add(1, "s");
+            String a = list1.getFirst();
+            list1.set(0, "b");
+            list1.removeFirst();
+        }
+        long end = System.currentTimeMillis();
+        long result = (end - start);
+        System.out.println(result);
+    }
+    public static void setL() {
+        Set<String> set = new HashSet<>();
+        set.add("лох");
+        set.add("лук");
+        set.add("лик");
+        set.add("лом");
+        set.add("лоб");
+        set.add("ласт");
+        set.add("ласточка");
+        set.add("лист");
+        set.add("лимон");
+        set.add("ленок");
+        set.add("люмен");
+        set.add("лазертаг");
+        set.add("лабуба");
+        set.add("лучница");
+        set.add("листовка");
+        set.add("ластик");
+        set.add("лука");
+        set.add("лида");
+        set.add("лариса");
+        set.add("лалаленд");
+        for (String s : set) {
+            System.out.println(s);
         }
     }
 }
