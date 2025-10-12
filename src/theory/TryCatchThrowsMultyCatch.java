@@ -1,14 +1,17 @@
 package theory;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TryCatchThrowsMultyCatch {
-    public static void main(String[] args){
-
+    public static void main(String[] args) throws IOException, URISyntaxException {
+        start();
     }
     public static void launch() {
         System.out.println("Программа запущенна");
@@ -92,7 +95,48 @@ public class TryCatchThrowsMultyCatch {
         }
         System.out.println(map);
     }
-    public static void launchException() {
+    public static void launchExceptionTwoFour() throws IOException, URISyntaxException {
+        System.out.println("Программа запущенна");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(reader.readLine());
+        try {
+            launchException(a);
+        }
+        catch (NullPointerException e) {
+            System.out.println("Исключение для нулевого показателя");
+        }
+        catch (FileNotFoundException  e) {
+            System.out.println("Файл не найден");
+        }
 
+    }
+    public static void launchException(int a) throws FileNotFoundException, URISyntaxException {
+        if (a == 1) {
+            throw new NullPointerException();
+        }
+        else if (a == 2) {
+            throw new FileNotFoundException();
+        }
+        else if (a == 3) {
+            throw new ArithmeticException();
+        }
+        else if (a == 4) {
+            throw new URISyntaxException("", "");
+        }
+    }
+    public static void start(){
+        try {
+            whileNumber();
+        }
+        catch (InterruptedException e) {
+            System.out.println(e + " кудаааа боже");
+        }
+
+    }
+    public static void whileNumber() throws InterruptedException {
+        for (int i = 10; i >= 0; i--) {
+            System.out.println(i);
+            Thread.sleep(500);
+        }
     }
 }
