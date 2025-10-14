@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 // Приведение примитивных типов: расширение и сужение
 public class ExpansionContraction {
     public static void main(String[] args) {
-        numberThree();
+        numberFive();
     }
     public static void intType() {
         int a = 0;
@@ -33,7 +33,14 @@ public class ExpansionContraction {
         short number = 9;
         char zero = '0';
         int nine = (zero + number);
-        short v = (short) nine;
-        System.out.println(v);
+        char n = (char) nine;
+        System.out.println(n);;
     }
+    public static void numberFive() {
+        int a = 44;
+        int b = 300;
+        short c = (short) (b - a);
+        System.out.println(c);
+    }
+
 }
