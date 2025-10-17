@@ -5,16 +5,18 @@ public class Test {
         Cow cow = new Cow();
         Whale whale = new Whale();
         Cow cow1 = new Whale();
-        check(cow);
-        check(whale);
-        check(cow1);
+        System.out.println(check(cow));
+        System.out.println(check(whale));
+        System.out.println(check(cow1));
+
     }
-    public static void check(Cow cow) {
+    public static String check(Cow cow) {
         if (cow instanceof Whale) {
-            System.out.println("whale");
+            return "while";
         }
         else if (cow instanceof Cow) {
-            System.out.println("cow");
+            return "cow";
         }
+        return "";
     }
 }
