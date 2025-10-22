@@ -8,6 +8,7 @@ public class Calculator {
     public static void main(String[] args) throws IOException {
         calculatorUser();
     }
+
     public static void calculatorUser() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Введите первое число: ");
